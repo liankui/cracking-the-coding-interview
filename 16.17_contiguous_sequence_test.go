@@ -27,6 +27,7 @@ func maxSubArray(nums []int) int {
 	return max
 }
 
+// TODO: another solution, more subtle...
 func maxSubArray2(nums []int) int {
 	return 0
 }
