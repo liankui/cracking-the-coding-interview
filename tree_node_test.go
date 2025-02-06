@@ -11,4 +11,6 @@ func TestTreeNode_Add(t *testing.T) {
 
 	n.Add(0)
 	n.Print()
+
+	preorderTraversal(n)
 }
