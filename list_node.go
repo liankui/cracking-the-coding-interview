@@ -43,6 +43,5 @@ func (n *ListNode) Reverse() *ListNode {
 	for cur != nil {
 		prev, cur, cur.Next = cur, cur.Next, prev
 	}
-
 	return prev
 }
