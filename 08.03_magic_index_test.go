@@ -14,7 +14,7 @@ func findMagicIndex(nums []int) int {
 }
 
 // 时间复杂度：O（log n）
-// 空间复杂度：O（log n ）
+// 空间复杂度：O（log n）
 func findMagicIndex2(nums []int) int {
 	return findMagicIndexHelper(nums, 0, len(nums)-1)
 }
