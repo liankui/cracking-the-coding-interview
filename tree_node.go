@@ -14,9 +14,39 @@ func NewTreeNode(val int) *TreeNode {
 	}
 }
 
-func (n *TreeNode) Add(val int) {
+// CreateTreeNode 前序创建
+func CreateTreeNode(vals []int) *TreeNode {
+	if len(vals) == 0 {
+		return nil
+	}
+
+	root := NewTreeNode(vals[0])
+	queue := []*TreeNode{root}
+
+	for i := 1; i < len(vals); i++ {
+		node := queue[0]
+		queue = queue[1:]
+
+		if vals[i] != -1 {
+			node.Left = &TreeNode{Val: vals[i]}
+			queue = append(queue, node.Left)
+		}
+
+		i++
+
+		if i < len(vals) && vals[i] != -1 {
+			node.Right = &TreeNode{Val: vals[i]}
+			queue = append(queue, node.Right)
+		}
+	}
+
+	return root
+}
+
+// Add 从左到右依次从小到大排列
+func (n *TreeNode) Add(val int) *TreeNode {
 	if n == nil {
-		return
+		return n
 	}
 
 	if val < n.Val {
@@ -32,6 +62,8 @@ func (n *TreeNode) Add(val int) {
 			n.Right.Add(val)
 		}
 	}
+
+	return n
 }
 
 func (n *TreeNode) Print() {

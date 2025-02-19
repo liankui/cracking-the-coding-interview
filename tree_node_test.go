@@ -14,3 +14,9 @@ func TestTreeNode_Add(t *testing.T) {
 
 	preorderTraversal(n)
 }
+
+func TestTreeNode_CreateTreeNode(t *testing.T) {
+	vals := []int{5, 4, 8, 11, -1, 13, 4, 7, 2, -1, -1, 5, 1}
+	n := CreateTreeNode(vals)
+	n.Print()
+}
