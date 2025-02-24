@@ -6,6 +6,8 @@ import (
 	"testing"
 )
 
+// LRU 使用哈希和双向链表实现
+
 type LRUCache struct {
 	cache map[int]*list.Element
 	order *list.List
